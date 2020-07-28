@@ -14,7 +14,7 @@
   },
   "scripts": {
     "dev": "cross-env NODE_ENV=development webpack-dev-server --mode development --open --hot",
-    "build:lib": "rm -rf ./lib && bili src/index.vue",
+    "build:lib": "bili src/index.vue",
     "build:example": "rm -rf ./dist && cross-env NODE_ENV=production webpack --mode production --progress --hide-modules",
     "prepublish": "npm run build:lib"
   },
