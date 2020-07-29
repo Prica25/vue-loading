@@ -1,59 +1,27 @@
 <template>
   <transition name="fade">
-    <div
-      v-show="isActive"
-      :class="{ 'velmld-full-screen': isFullScreen }"
-      :style="{ backgroundColor }"
-      ref="velmld"
-      class="velmld-overlay"
-    >
+    <div v-show="isActive" :class="{ 'velmld-full-screen': isFullScreen }" :style="{ backgroundColor }" ref="velmld" class="velmld-overlay">
       <div class="velmld-spinner">
         <slot name="default">
-          <component
-            :is="spinner"
-            :color="color"
-            :size="`${size}px`"
-            :duration="`${duration}s`"
-          />
+          <component :is="spinner" :color="color" :size="`${size}px`" :duration="`${duration}s`" />
         </slot>
-
-        <div
-          v-if="typeof text === 'string' && text.length"
-          :style="{ color, ...textStyle }"
-        >
+        <div v-if="typeof text === 'string' && text.length" :style="{ color, ...textStyle }">
           {{ text }}
         </div>
         <div v-if="Array.isArray(text)" name="list" :style="{ color, ...textStyle }">
           <div v-for="(str, index) in text" :key="index">
-            <div 
-            class="text-container"
-            v-if="str.text && str.text.length" 
-            :style="{ opacity: getOpacity(index) }"
-            >
+            <div class="text-container" v-if="str.text && str.text.length" :style="{ opacity: getOpacity(index) }">
               <slot v-if="str && str.icon" name="icon">
-                <component
-                  :is="str.icon"
-                  :color="color"
-                  size="24"
-                  :duration="`${duration/2}s`"
-                />
+                <component :is="str.icon" :color="color" size="24" :duration="`${duration/2}s`" />
               </slot>
               {{ str.text }}
             </div>
           </div>
         </div>
-        <div v-if="text && !Array.isArray(text) && typeof text === 'object' &&  text.text" name="list" :style="{ color, ...textStyle }">
-          <div 
-          class="text-container"
-          :style="{ opacity: getOpacity(index) }"
-          >
+        <div v-if="text && !Array.isArray(text) && typeof text === 'object' &&  text.text" :style="{ color, ...textStyle }">
+          <div class="text-container" :style="{ opacity: getOpacity(index) }">
             <slot v-if="text.icon" name="icon">
-              <component
-                :is="text.icon"
-                :color="color"
-                size="24"
-                :duration="`${duration/2}s`"
-              />
+              <component :is="text.icon" :color="color" size="24" :duration="`${duration}s`" />
             </slot>
             {{ text.text }}
           </div>
@@ -140,10 +108,12 @@ export default {
 .fade-leave-active {
   transition: opacity 0.3s;
 }
+
 .fade-enter,
 .fade-leave-to {
   opacity: 0;
 }
+
 .velmld-overlay {
   position: absolute;
   z-index: 3000;
@@ -154,6 +124,7 @@ export default {
   left: 0;
   transition: opacity 0.3s;
 }
+
 .velmld-spinner {
   top: 50%;
   left: 50%;
@@ -161,11 +132,13 @@ export default {
   position: absolute;
   text-align: center;
 }
+
 .velmld-full-screen {
   position: fixed;
 }
+
 .text-container {
-  display: -webkit-flex;  
+  display: -webkit-flex;
   display: flex;
   -webkit-align-items: center;
   align-items: center;
