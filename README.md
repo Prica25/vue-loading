@@ -1,45 +1,28 @@
-<a href="https://www.buymeacoffee.com/biigpongsatorn" target="_blank"><img src="https://www.buymeacoffee.com/assets/img/custom_images/yellow_img.png" alt="Buy Me A Coffee" style="height: auto !important;width: auto !important;" ></a>
 
-<p>
-  <a href="https://npmjs.com/package/vue-element-loading"><img src="https://img.shields.io/npm/v/vue-element-loading.svg?style=flat" alt="NPM version"></a>
-  <a href="https://npmjs.com/package/vue-element-loading"><img src="https://img.shields.io/npm/dm/vue-element-loading.svg?style=flat" alt="NPM downloads"></a>
-  <a href="https://www.npmjs.com/package/vue-element-loading"><img src="https://img.shields.io/npm/l/vue-element-loading.svg?style=flat" alt="License"></a>
-  <a href="https://www.npmjs.com/package/vue-element-loading"><img src="https://travis-ci.org/biigpongsatorn/biigpongsatorn.github.io.svg?branch=dev" alt="Build Status"></a>
-</p>
 
-# vue-element-loading
+# vue-loading-twa
 
-⏳ Loading inside a container or full screen for Vue.js
-
-# 👀 Document & Demo Page
-
-- [Docs & Live demo](https://biigpongsatorn.github.io/#/vue-element-loading)
-- [Fully feature live demo](https://vue-element-loading.netlify.com/)
+⏳ Loading inside a container or full screen for Vue.js. This is a improved extension from [[vue-element-loading](https://github.com/biigpongsatorn/vue-element-loading)]
 
 # 💻 Install
 
 ```sh
-npm install --save vue-element-loading
+npm install vue-loading-twa
 ```
-or
-```sh
-yarn add vue-element-loading
-```
-
 # 🕹 Usage
 ```javascript
 import Vue from 'vue'
-import VueElementLoading from 'vue-element-loading'
+import VueLoading from 'vue-loading-twa'
 
-Vue.component('VueElementLoading', VueElementLoading)
+Vue.component('VueLoading', VueLoading)
 ```
 or
 ```javascript
-import VueElementLoading from 'vue-element-loading'
+import VueLoading from 'vue-loading-twa'
 
 export default {
   components: {
-    VueElementLoading
+    VueLoading
   }
 }
 ```
@@ -49,7 +32,7 @@ export default {
 ## Inside container
 ```html
 <div class="parent">
-  <vue-element-loading :active="show" spinner="bar-fade-scale"/>
+  <vue-loading :active="show" spinner="bar-fade-scale"/>
   <span>
     This is my content.
   </span>
@@ -59,7 +42,7 @@ export default {
 ## Full screen
 ```html
 <body>
-  <vue-element-loading :active="show" is-full-screen/>
+  <vue-loading :active="show" is-full-screen/>
 </body>
 ```
 
@@ -67,7 +50,7 @@ export default {
 Use the `color` parameter to set the color of the displayed spinner (does not affect custom spinner images).
 ```html
 <div class="parent">
-  <vue-element-loading :active="show" spinner="bar-fade-scale" color="#FF6700"/>
+  <vue-loading :active="show" spinner="bar-fade-scale" color="#FF6700"/>
   <span>
     This is my content.
   </span>
@@ -78,7 +61,7 @@ Use the `color` parameter to set the color of the displayed spinner (does not af
 Use the `text` parameter to set the text which will appear below loader.
 ```html
 <div class="parent">
-  <vue-element-loading :active="show" spinner="bar-fade-scale" color="#FF6700" text="Please wait..."/>
+  <vue-loading :active="show" spinner="bar-fade-scale" color="#FF6700" text="Please wait..."/>
   <span>
     This is my content.
   </span>
@@ -89,7 +72,7 @@ Use the `text` parameter to set the text which will appear below loader.
 Use the `textStyle` parameter to set the style of text( you need to pass css-in-js way using camelCase exp. fontSize, backgroundColor etc).
 ```html
 <div class="parent">
-  <vue-element-loading :active="show" spinner="bar-fade-scale" color="#FF6700" text="Please textStyle={fontSize: '25px'}  wait..."/>
+  <vue-loading :active="show" spinner="bar-fade-scale" color="#FF6700" text="Please textStyle={fontSize: '25px'}  wait..."/>
   <span>
     This is my content.
   </span>
@@ -100,7 +83,7 @@ Use the `textStyle` parameter to set the style of text( you need to pass css-in-
 Use the `size` parameter to set the size of the displayed spinner (does not affect custom spinner images).
 ```html
 <div class="parent">
-  <vue-element-loading :active="show" spinner="bar-fade-scale" size="128"/>
+  <vue-loading :active="show" spinner="bar-fade-scale" size="128"/>
   <span>
     This is my content.
   </span>
@@ -111,7 +94,7 @@ Use the `size` parameter to set the size of the displayed spinner (does not affe
 Use the `duration` parameter to set the animation loop duration in seconds (does not affect custom spinner images).
 ```html
 <div class="parent">
-  <vue-element-loading :active="show" spinner="bar-fade-scale" duration="1.0"/>
+  <vue-loading :active="show" spinner="bar-fade-scale" duration="1.0"/>
   <span>
     This is my content.
   </span>
@@ -121,17 +104,33 @@ Use the `duration` parameter to set the animation loop duration in seconds (does
 ## Customize loader
 ```html
 <div class="parent">
-  <vue-element-loading :active="show">
+  <vue-loading :active="show">
     <img src="/static/pikachu.gif" width="55px" height="55px">
-  </vue-element-loading>
+  </vue-loading>
 </div>
+```
+
+## Text
+```html
+<div class="parent">
+  <vue-loading :active="show1" :text="showText1" />
+  <vue-loading :active="show2" :text="showText2" />
+  <vue-loading :active="show3" :text="showText3" />
+</div>
+```
+
+```javascript
+showText1 = "Example" //Text appears normal bellow spinner
+showText2 = { text: 'Example2' icon:  'Cog' } //Text appears with an icon on left side of string
+showText3 = [{ text: 'Example3' icon:  'Cog' }, { text: 'Example3' icon:  'Cog' }] //Appears multiple strings bellow spinner
+
+// Options for icons: 'Cog', 'Error', 'Check'
 ```
 
 # 🌀 Spinner
 
 <img src="https://raw.githubusercontent.com/biigpongsatorn/vue-element-loading/HEAD/static/spinner.png">
 
-[See full document here.](https://biigpongsatorn.github.io/#/vue-element-loading)
 
 # ⚙️ Props
 | Props       | Type          | Default  | Description  |
@@ -143,25 +142,11 @@ Use the `duration` parameter to set the animation loop duration in seconds (does
 | size    | String        | "40"        | The size to display the spinner in pixels  (**NOTE:** this will not affect custom spinner images) |
 | duration    | String        | "0.6"        | The duration of one 'loop' of the spinner animation, in seconds  (**NOTE:** this will not affect custom spinner images) |
 | is-full-screen    | Boolean        | false        | Loader will overlay the full page |
-| text   | String    | -  | Text will appear below loader |
+| text   | String or Array    | -  | Text will appear below loader |
 | text-style | Object | {} | Change style of the text below loader |
 
-
-# 🤝 Contributing
-1. Fork this repository.
-2. Create new branch with feature name.
-3. Run `npm install` and `npm run dev`.
-4. Create your feature.
-5. Commit and set commit message with feature name.
-6. Push your code to your fork repository.
-7. Create pull request. 🙂
-
-# ⭐️ Support
-
-If you like this project, You can support me with starring ⭐ this repository.
 
 # 📄 License
 
 [MIT](LICENSE)
 
-Developed with ❤️ and ☕️
