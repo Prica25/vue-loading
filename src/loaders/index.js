@@ -6,6 +6,7 @@ import LineScale from './line-scale.vue'
 import LineDown from './line-down.vue'
 import BarFade from './bar-fade.vue'
 import BarFadeScale from './bar-fade-scale.vue'
+import Custom from './custom.vue'
 
 export default {
   Spinner,
@@ -15,5 +16,6 @@ export default {
   LineScale,
   LineDown,
   BarFade,
-  BarFadeScale
+  BarFadeScale,
+  Custom,
 }
