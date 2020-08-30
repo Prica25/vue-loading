@@ -8,14 +8,18 @@
       >
         <vue-loading
           :active="loading"
-          background-color="rgba(0,0,0,0.14)"
-          color="red"
+          :is-full-screen="fullScreen"
+          background-color="rgba(200,200,200,1)"
+          color="green"
           spinner="Custom"
           :svgCode="
             codeSVG !== '' && codeSVG !== '<!-- Insert SVG here -->'
               ? codeSVG
               : undefined
           "
+          :text="textCode"
+          duration="1.5"
+          size="64"
         ></vue-loading>
       </v-col>
     </v-row>
@@ -40,6 +44,7 @@
       >
         <v-switch v-model="text" label="Descrição no loader"></v-switch>
         <v-switch v-model="customSpinner" label="Custom Spinner"></v-switch>
+        <v-btn @click="fullScreenActivate" color="primary">FullScreen</v-btn>
       </v-col>
       <v-col
         class="pa-0 mx-2"
@@ -74,17 +79,44 @@ export default {
   },
   data: () => ({
     loading: true,
+    fullScreen: false,
     codeJS: '// Insert JS here',
     codeSVG: '<!-- Insert SVG here -->',
     text: false,
     customSpinner: false,
   }),
   methods: {
+    fullScreenActivate() {
+      this.fullScreen = true
+      setTimeout(() => {
+        this.fullScreen = false
+      }, 1000)
+    },
     highlighterJS(code) {
       return highlight(code, languages.js)
     },
     highlighterSVG(code) {
       return highlight(code, languages.svg)
+    },
+  },
+  computed: {
+    textCode() {
+      function IsJsObject(str) {
+        try {
+          eval(str)
+        } catch (e) {
+          console.log(e)
+          return false
+        }
+        return true
+      }
+
+      let code = this.codeJS.replace('// Insert JS here', '')
+      if (code !== '' && IsJsObject(code)) {
+        return eval(code)
+      } else {
+        return code
+      }
     },
   },
 }
