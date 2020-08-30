@@ -4,7 +4,7 @@
   "version": "1.2.0",
   "author": "prica25 <pricagamer@gmail.com>",
   "license": "MIT",
-  "main": "lib/vue-element-loading.min.js",
+  "main": "lib/vue-loading-twa.min.js",
   "files": [
     "lib"
   ],
