@@ -15,6 +15,7 @@
             :size="`${size}px`"
             :duration="`${duration}s`"
             :svg="svgCode !== '' ? svgCode : undefined"
+			style="margin-bottom: 15px"
           />
         </slot>
         <div
