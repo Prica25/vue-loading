@@ -103,11 +103,27 @@ Use the `duration` parameter to set the animation loop duration in seconds (does
 
 ## Customize loader
 ```html
+<!-- IMG loader -->
 <div class="parent">
   <vue-loading :active="show">
     <img src="/static/pikachu.gif" width="55px" height="55px">
   </vue-loading>
 </div>
+```
+
+```html
+<!-- SVG loader -->
+<div class="parent">
+  <vue-loading
+    :active="show"
+    spinner="Custom"
+    color="red"
+    size="64"
+    duration="1.5"
+    svgCode="<svg width='{size}'><path fill='{color}'><animateTransform dur='{duration}' /></path></svg>"
+  />
+</div>
+<!-- NOTE: Tags {size}, {color}, {duration} will be replace with component props value -->
 ```
 
 ## Text
@@ -121,15 +137,26 @@ Use the `duration` parameter to set the animation loop duration in seconds (does
 
 ```javascript
 showText1 = "Example" //Text appears normal bellow spinner
-showText2 = { text: 'Example2' icon:  'Cog' } //Text appears with an icon on left side of string
-showText3 = [{ text: 'Example3' icon:  'Cog' }, { text: 'Example3' icon:  'Cog' }] //Appears multiple strings bellow spinner
+showText2 = { text: 'Example2', icon:  'Cog' } //Text appears with an icon on left side of string
+showText3 = [{ text: 'Example3', icon:  'Cog' }, { text: 'Example3', icon:  'Cog' }] //Appears multiple strings bellow spinner
 
 // Options for icons: 'Cog', 'Error', 'Check'
 ```
 
-# 🌀 Spinner
+# 🌀 Spinner and Icons
 
-<img src="https://raw.githubusercontent.com/biigpongsatorn/vue-element-loading/HEAD/static/spinner.png">
+<img src="https://raw.githubusercontent.com/Prica25/vue-loading/custom_spinner/statics/Spinners/spinner.png">
+<img src="https://raw.githubusercontent.com/Prica25/vue-loading/custom_spinner/statics/Spinners/mini-spinner.png">
+<img src="https://raw.githubusercontent.com/Prica25/vue-loading/custom_spinner/statics/Spinners/ring.png">
+<img src="https://raw.githubusercontent.com/Prica25/vue-loading/custom_spinner/statics/Spinners/line-wave.png">
+<img src="https://raw.githubusercontent.com/Prica25/vue-loading/custom_spinner/statics/Spinners/line-scale.png">
+<img src="https://raw.githubusercontent.com/Prica25/vue-loading/custom_spinner/statics/Spinners/line-down.png">
+<img src="https://raw.githubusercontent.com/Prica25/vue-loading/custom_spinner/statics/Spinners/bar-fade.png">
+<img src="https://raw.githubusercontent.com/Prica25/vue-loading/custom_spinner/statics/Spinners/bar-fade-scale.png">
+<img src="https://raw.githubusercontent.com/Prica25/vue-loading/custom_spinner/statics/Spinners/Custom.png">
+<img src="https://raw.githubusercontent.com/Prica25/vue-loading/custom_spinner/statics/Icons/Check.png">
+<img src="https://raw.githubusercontent.com/Prica25/vue-loading/custom_spinner/statics/Icons/Error.png">
+<img src="https://raw.githubusercontent.com/Prica25/vue-loading/custom_spinner/statics/Icons/Cog.png">
 
 
 # ⚙️ Props
