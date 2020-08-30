@@ -1,7 +1,7 @@
 {
   "name": "vue-loading-twa",
   "description": "Loading inside a container or full screen for Vue.js",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "author": "prica25 <pricagamer@gmail.com>",
   "license": "MIT",
   "main": "lib/vue-loading-twa.min.js",
