@@ -146,24 +146,24 @@ showText3 = [{ text: 'Example3', icon:  'Cog' }, { text: 'Example3', icon:  'Cog
 # 🌀 Spinner and Icons
 
 <p float="left">
-    <img width="100" src="https://raw.githubusercontent.com/Prica25/vue-loading/custom_spinner/statics/Spinners/spinner.png">
-    <img width="100" src="https://raw.githubusercontent.com/Prica25/vue-loading/custom_spinner/statics/Spinners/mini-spinner.png">
-    <img width="100" src="https://raw.githubusercontent.com/Prica25/vue-loading/custom_spinner/statics/Spinners/ring.png">
+    <img width="265" src="https://raw.githubusercontent.com/Prica25/vue-loading/custom_spinner/statics/Spinners/spinner.png">
+    <img width="265" src="https://raw.githubusercontent.com/Prica25/vue-loading/custom_spinner/statics/Spinners/mini-spinner.png">
+    <img width="265" src="https://raw.githubusercontent.com/Prica25/vue-loading/custom_spinner/statics/Spinners/ring.png">
 </p>
 <p float="left">
-    <img width="100" src="https://raw.githubusercontent.com/Prica25/vue-loading/custom_spinner/statics/Spinners/line-wave.png">
-    <img width="100" src="https://raw.githubusercontent.com/Prica25/vue-loading/custom_spinner/statics/Spinners/line-scale.png">
-    <img width="100" src="https://raw.githubusercontent.com/Prica25/vue-loading/custom_spinner/statics/Spinners/line-down.png">
+    <img width="265" src="https://raw.githubusercontent.com/Prica25/vue-loading/custom_spinner/statics/Spinners/line-wave.png">
+    <img width="265" src="https://raw.githubusercontent.com/Prica25/vue-loading/custom_spinner/statics/Spinners/line-scale.png">
+    <img width="265" src="https://raw.githubusercontent.com/Prica25/vue-loading/custom_spinner/statics/Spinners/line-down.png">
 </p>
 <p float="left">
-    <img width="100" src="https://raw.githubusercontent.com/Prica25/vue-loading/custom_spinner/statics/Spinners/bar-fade.png">
-    <img width="100" src="https://raw.githubusercontent.com/Prica25/vue-loading/custom_spinner/statics/Spinners/bar-fade-scale.png">
-    <img width="100" src="https://raw.githubusercontent.com/Prica25/vue-loading/custom_spinner/statics/Spinners/Custom.png">
+    <img width="265" src="https://raw.githubusercontent.com/Prica25/vue-loading/custom_spinner/statics/Spinners/bar-fade.png">
+    <img width="265" src="https://raw.githubusercontent.com/Prica25/vue-loading/custom_spinner/statics/Spinners/bar-fade-scale.png">
+    <img width="265" src="https://raw.githubusercontent.com/Prica25/vue-loading/custom_spinner/statics/Spinners/Custom.png">
 </p>
 <p float="left">
-    <img width="100" src="https://raw.githubusercontent.com/Prica25/vue-loading/custom_spinner/statics/Icons/Check.png">
-    <img width="100" src="https://raw.githubusercontent.com/Prica25/vue-loading/custom_spinner/statics/Icons/Error.png">
-    <img width="100" src="https://raw.githubusercontent.com/Prica25/vue-loading/custom_spinner/statics/Icons/Cog.png">
+    <img width="265" src="https://raw.githubusercontent.com/Prica25/vue-loading/custom_spinner/statics/Icons/Check.png">
+    <img width="265" src="https://raw.githubusercontent.com/Prica25/vue-loading/custom_spinner/statics/Icons/Error.png">
+    <img width="265" src="https://raw.githubusercontent.com/Prica25/vue-loading/custom_spinner/statics/Icons/Cog.png">
 </p>
 
 
