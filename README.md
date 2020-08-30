@@ -171,7 +171,8 @@ showText3 = [{ text: 'Example3', icon:  'Cog' }, { text: 'Example3', icon:  'Cog
 | Props       | Type          | Default  | Description  |
 | ----------- |:--------------| ---------|--------------|
 | active      | Boolean       | -        | Status for show/hide loading |
-| spinner    | String        | spinner   | Spinner icon name: `spinner`, `mini-spinner`, `ring`, `line-wave`, `line-scale`, `line-down`, `bar-fade`, `bar-fade-scale` |
+| spinner    | String        | spinner   | Spinner icon name: `spinner`, `mini-spinner`, `ring`, `line-wave`, `line-scale`, `line-down`, `bar-fade`, `bar-fade-scale`,  `Custom` |
+| svgCode | String | "" | String with SVG content, only works if spinner its equal to `Custom` |
 | color    | String        | #000        | Color of spinner icon |
 | background-color    | String        | rgba(255, 255, 255, .9)        | Background color of spinner icon (for overlay) |
 | size    | String        | "40"        | The size to display the spinner in pixels  (**NOTE:** this will not affect custom spinner images) |
