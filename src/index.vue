@@ -15,7 +15,7 @@
             :size="`${size}px`"
             :duration="`${duration}s`"
             :svg="svgCode !== '' ? svgCode : undefined"
-			style="margin-bottom: 15px"
+            style="margin-bottom: 15px"
           />
         </slot>
         <div
@@ -25,27 +25,29 @@
           {{ text }}
         </div>
         <div
+          id="list_text"
           v-if="Array.isArray(text)"
-          name="list"
           :style="{ color, ...textStyle }"
         >
-          <div v-for="(str, index) in text" :key="index">
-            <div
-              class="text-container"
-              v-if="str.text && str.text.length"
-              :style="{ opacity: getOpacity(index) }"
-            >
-              <slot v-if="str && str.icon" name="icon">
-                <component
-                  :is="str.icon"
-                  :color="color"
-                  size="24"
-                  :duration="`${duration / 2}s`"
-                />
-              </slot>
-              {{ str.text }}
+          <vue-scroll :ops="ops">
+            <div v-for="(str, index) in text" :key="index" class="px-4">
+              <div
+                class="text-container"
+                v-if="str.text && str.text.length"
+                :style="{ opacity: fade ? getOpacity(index) : 1 }"
+              >
+                <slot v-if="str && str.icon" name="icon">
+                  <component
+                    :is="str.icon"
+                    :color="color"
+                    size="24"
+                    :duration="`${duration / 2}s`"
+                  />
+                </slot>
+                {{ str.text }}
+              </div>
             </div>
-          </div>
+          </vue-scroll>
         </div>
         <div
           v-if="
@@ -76,6 +78,8 @@
 <script>
 import Loaders from './loaders'
 import Icons from './icons'
+
+import vuescroll from 'vuescroll'
 
 export default {
   name: 'vue-loading',
@@ -116,9 +120,26 @@ export default {
       type: String,
       default: '',
     },
+    fade: {
+      type: Boolean,
+      default: true,
+    },
   },
+
   data() {
     return {
+      ops: {
+        vuescroll: {
+          mode: 'native',
+          detectResize: true,
+          sizeStrategy: 'percent',
+        },
+        bar: {
+          keepShow: true,
+          background: this.color,
+          opacity: 1,
+        },
+      },
       isActive: this.active || false,
     }
   },
@@ -145,7 +166,7 @@ export default {
       return (index + 1) / this.text.length
     },
   },
-  components: Object.assign(Loaders, Icons),
+  components: Object.assign(Loaders, Icons, { vueScroll: vuescroll }),
 }
 </script>
 
@@ -190,6 +211,10 @@ export default {
   align-items: center;
   -webkit-justify-content: center;
   justify-content: center;
+}
+
+#list_text {
+  height: 200px;
 }
 </style>
 

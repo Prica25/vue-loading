@@ -17,6 +17,7 @@
               ? codeSVG
               : undefined
           "
+          :fade="fade"
           :text="textCode"
           duration="1.5"
           size="64"
@@ -44,6 +45,7 @@
       >
         <v-switch v-model="text" label="Descrição no loader"></v-switch>
         <v-switch v-model="customSpinner" label="Custom Spinner"></v-switch>
+        <v-switch v-model="fade" label="Fade"></v-switch>
         <v-btn @click="fullScreenActivate" color="primary">FullScreen</v-btn>
       </v-col>
       <v-col
@@ -82,8 +84,9 @@ export default {
     fullScreen: false,
     codeJS: '// Insert JS here',
     codeSVG: '<!-- Insert SVG here -->',
-    text: false,
+    text: true,
     customSpinner: false,
+    fade: true,
   }),
   methods: {
     fullScreenActivate() {
